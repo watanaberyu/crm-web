@@ -11,7 +11,7 @@
 {% endfor %}
 
 <h2>新規顧客の追加</h2>
-<form action="/add" method="post">
+<form action="{{ url_for('add_customer') }}" method="post">
     Name: <br><input type="text" name="name"><br>
     Age: <br><input type="number" name="age"><br>
     <input type="submit" value="add">

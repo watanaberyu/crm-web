@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 
 import db
 
@@ -29,7 +29,7 @@ def add_customer():
     db.add_customer(name, age)
 
     # index() にリダイレクトする
-    return redirect("/index")
+    return redirect(url_for("index"))
 
 
 if __name__ == "__main__":
