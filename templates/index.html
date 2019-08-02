@@ -6,6 +6,9 @@
 </head>
 <body>
 <h1>顧客一覧</h1>
+{% for customer in customers %}
+<li>{{ customer[0] }}さん {{ customer[1] }}歳</li>
+{% endfor %}
 
 </body>
 </html>

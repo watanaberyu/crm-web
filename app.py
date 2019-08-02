@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -11,8 +11,11 @@ app = Flask(__name__)
 
 @app.route("/index")
 def index():
-    if request.method == "GET":
-        return render_template("index.html")
+    customers = [["Bob", 15],
+                 ["Tom", 57],
+                 ["Ken", 73]]
+
+    return render_template("index.html", customers=customers)
 
 
 if __name__ == "__main__":
