@@ -33,6 +33,18 @@ def find_all_customers():
     return customers
 
 
+def add_customer(name, age):
+    conn = sqlite3.connect("crm.sqlite")
+    cursor = conn.cursor()
+
+    sql = f"INSERT INTO customers (name, age) VALUES (?, ?);"
+
+    cursor.execute(sql, (name, age))
+
+    conn.commit()
+
+    conn.close()
+
+
 if __name__ == "__main__":
     init_db()
-    find_all_customers()

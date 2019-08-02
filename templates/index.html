@@ -10,5 +10,12 @@
 <li>{{ customer[0] }}さん {{ customer[1] }}歳</li>
 {% endfor %}
 
+<h2>新規顧客の追加</h2>
+<form action="/add" method="post">
+    Name: <br><input type="text" name="name"><br>
+    Age: <br><input type="number" name="age"><br>
+    <input type="submit" value="add">
+</form>
+
 </body>
 </html>
